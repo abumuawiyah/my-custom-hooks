@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React from "react"; // useState
 import ReactDOM from "react-dom";
-import useInterval from "./hooks/useInterval";
+// import useInterval from "./hooks/useInterval";
+import useRandomUsers from "./hooks/useRandomUser";
 
 function Counter() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
+  const randomUsers = useRandomUsers();
+  // useInterval(() => {
+  //   // Your custom logic here
+  //   setCount(count + 1);
+  // }, 1000);
 
-  useInterval(() => {
-    // Your custom logic here
-    setCount(count + 1);
-  }, 1000);
-
-  return <h1>{count}</h1>;
+  return (
+    <>
+      {randomUsers.map((u, id) => (
+        <div key={id}>{u.name}</div>
+      ))}
+    </>
+  );
 }
 
 const rootElement = document.getElementById("root");
