@@ -2,6 +2,7 @@ import React from "react"; // useState
 import ReactDOM from "react-dom";
 // import useInterval from "./hooks/useInterval";
 import useRandomUsers from "./hooks/useRandomUser";
+import useWindowWidth from "./hooks/useWindowWidth";
 
 function Counter() {
   // const [count, setCount] = useState(0);
@@ -13,6 +14,7 @@ function Counter() {
 
   return (
     <>
+      {useWindowWidth()}
       {randomUsers.map((u, id) => (
         <div key={id}>{u.name}</div>
       ))}
