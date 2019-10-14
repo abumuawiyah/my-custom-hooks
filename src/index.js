@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 // import useInterval from "./hooks/useInterval";
 import useRandomUsers from "./hooks/useRandomUser";
 import useWindowWidth from "./hooks/useWindowWidth";
+import usePersistentStore from "./hooks/usePersistentStore";
 
 function Counter() {
   // const [count, setCount] = useState(0);
@@ -11,6 +12,8 @@ function Counter() {
   //   // Your custom logic here
   //   setCount(count + 1);
   // }, 1000);
+
+  console.log(usePersistentStore());
 
   return (
     <>
