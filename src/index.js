@@ -8,12 +8,13 @@ import usePersistentStore from "./hooks/usePersistentStore";
 function Counter() {
   // const [count, setCount] = useState(0);
   const randomUsers = useRandomUsers();
+  const { set, get, getAll } = usePersistentStore();
   // useInterval(() => {
   //   // Your custom logic here
   //   setCount(count + 1);
   // }, 1000);
 
-  console.log(usePersistentStore());
+  console.log("get All", getAll());
 
   return (
     <>

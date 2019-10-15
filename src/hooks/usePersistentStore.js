@@ -23,7 +23,7 @@ export default function usePersistentStore() {
 
   function get(key) {
     if (key) {
-      window.localStorage.getItem(key);
+      return state.find(s => s.key === key);
     }
   }
 
@@ -31,10 +31,15 @@ export default function usePersistentStore() {
     window.localStorage.clear();
   }
 
+  function getAll() {
+    return state;
+  }
+
   return {
     state,
     set,
     get,
-    reset
+    reset,
+    getAll
   };
 }
