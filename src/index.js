@@ -16,12 +16,23 @@ function Counter() {
 
   console.log("get All", getAll());
 
+  function handleSet() {
+    set("myName3", "azizi");
+  }
+
+  function handleGet() {
+    console.log(get("myName3"));
+  }
+
   return (
     <>
       {useWindowWidth()}
       {randomUsers.map((u, id) => (
         <div key={id}>{u.name}</div>
       ))}
+      <button onClick={handleSet}>Set</button>
+      <br />
+      <button onClick={handleGet}>Get</button>
     </>
   );
 }
