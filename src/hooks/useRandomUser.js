@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 
 export default function useRandomUsers() {
-  const [users, setUsers] = useState([{ name: "azizi" }]);
+  const [users, setUsers] = useState([]);
   useEffect(() => {
-    setUsers([{ name: "hafsa" }, { name: "rumaysa" }]);
-    console.log("user");
-    return () => {};
+    fetch("https://randomuser.me/api/?results=50")
+      .then(r => r.json())
+      .then(r => setUsers(r.results));
   }, []);
 
-  return users;
+  return {
+    users,
+    status: !users || users.length === 0 ? false : true
+  };
 }

@@ -14,7 +14,7 @@ function Counter() {
   //   setCount(count + 1);
   // }, 1000);
 
-  console.log("get All", getAll());
+  console.log("get All", randomUsers);
 
   function handleSet() {
     set("myName3", "azizi");
@@ -27,9 +27,7 @@ function Counter() {
   return (
     <>
       {useWindowWidth()}
-      {randomUsers.map((u, id) => (
-        <div key={id}>{u.name}</div>
-      ))}
+
       <button onClick={handleSet}>Set</button>
       <br />
       <button onClick={handleGet}>Get</button>
