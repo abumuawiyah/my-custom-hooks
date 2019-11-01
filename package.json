@@ -7,7 +7,8 @@
   "dependencies": {
     "react": "16.8.0-alpha.0",
     "react-dom": "16.8.0-alpha.0",
-    "react-scripts": "2.0.3"
+    "react-scripts": "2.0.3",
+    "use-random-user": "0.0.1"
   },
   "devDependencies": {},
   "scripts": {
