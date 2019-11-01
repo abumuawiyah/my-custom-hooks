@@ -7,14 +7,13 @@ import usePersistentStore from "./hooks/usePersistentStore";
 
 function Counter() {
   // const [count, setCount] = useState(0);
-  const randomUsers = useRandomUsers();
+  const randomUsers10 = useRandomUsers({ total: 10 });
+  const randomUsers50 = useRandomUsers({ total: 50 });
   const { set, get, getAll } = usePersistentStore();
   // useInterval(() => {
   //   // Your custom logic here
   //   setCount(count + 1);
   // }, 1000);
-
-  console.log("get All", randomUsers);
 
   function handleSet() {
     set("myName3", "azizi");
@@ -27,7 +26,13 @@ function Counter() {
   return (
     <>
       {useWindowWidth()}
-
+      {randomUsers10.users.map(u => (
+        <div>{u.email}</div>
+      ))}
+      <hr />
+      {randomUsers50.users.map(u => (
+        <div>{u.email}</div>
+      ))}
       <button onClick={handleSet}>Set</button>
       <br />
       <button onClick={handleGet}>Get</button>
